@@ -3,8 +3,6 @@ from tkinter import filedialog
 
 import funcs
 
-# Auth Token - bG929nAahSyrSEoiwEmmMQ3s
-
 i = input('Enter Url or type in `file` here: ')
 
 

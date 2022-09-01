@@ -1,11 +1,11 @@
 import os, requests, pathlib
 from clint.textui import progress
 
-i = input('Enter the Username of whom you will download theyere favs: ')
+name = input('Enter the Username of whom you will download theyere favs: ')
 
 head = {'User-Agent': 'favDownloader/0.1'}
 
-url = f'https://e621.net/posts.json?tags=fav:{i}'
+url = f'https://e621.net/posts.json?tags=fav:{name}'
 
 if (os.path.isdir(os.getcwd()+"/output") != True):
     os.mkdir(os.getcwd()+f"/output")
@@ -17,7 +17,7 @@ i = 0
 
 favsCount = len(posts['posts'])
 
-print(f'Downloading {favsCount} of {i} favorites!')
+print(f'Downloading {favsCount} favs!')
 
 while i < len(posts['posts']):
     fileUrl = posts['posts'][i]['file']['url']
