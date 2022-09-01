@@ -23,7 +23,7 @@ while i < len(posts['posts']):
     fileUrl = posts['posts'][i]['file']['url']
     artistArray = posts['posts'][i]['tags']['artist']
     postID = posts['posts'][i]['id']
-    artist = ''
+    artistName = ''
 
     file_ext = pathlib.Path(fileUrl ).suffix
     fileRequest = requests.get(fileUrl, headers=head)
