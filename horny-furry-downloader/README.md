@@ -8,4 +8,3 @@
 # Version: 0.3
 - Downloads are significantly faster.
 - Redone the formating of the text file
-- Redone Argument Handling
