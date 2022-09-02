@@ -3,7 +3,7 @@
 2. if you have a file, input 'file' into it. The file needs to be a text file and needs to have links separated by `new lines`[^note]
 3. wait for it to download
 
-[^note]: Example: [link]()
+[^note]: Example: [link](https://github.com/Saniee/YiffTools/blob/main/posts.txt)
 
 # Version: 0.3
 - Downloads are significantly faster.
