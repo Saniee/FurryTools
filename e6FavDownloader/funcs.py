@@ -5,7 +5,7 @@ def download(fileUrl, artistName, postID, head):
     fileRequest = requests.get(fileUrl, headers=head)
 
     if (os.path.exists(os.getcwd()+f'./download/{artistName} - {postID}{file_ext}') == True):
-        print(f'file - {artistName} - {postID}{file_ext} already exists!')
+        print(f'File - {artistName} - {postID}{file_ext} already exists!')
     else:
         print(f'Downloading {artistName} - {postID}{file_ext}!')
         with open(f'./download/{artistName} - {postID}{file_ext}', 'wb') as f:
