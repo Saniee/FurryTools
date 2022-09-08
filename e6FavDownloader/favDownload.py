@@ -5,15 +5,10 @@ import threading
 
 import funcs
 
-arg = argparse.ArgumentParser('favDownload')
-arg.add_argument('name', help='The name of the user you want favorites from.')
-arg.add_argument('-limit', required=False, default=75, help='The amount of favorites you want to download. The MAX is 320.')
-
-args = arg.parse_args()
 
 def main():
-    name = args.name # input('Enter the Username of whom you will download theyere favs: ')
-    limit = args.limit # input('Enter how much favorites you want to download (MAX is 320): ')
+    name = input('Enter the Username of whom you will download theyere favs: ')
+    limit = input('Enter how much favorites you want to download (MAX is 320): ')
 
     if (int(limit) > 320):
         print('I am sorry but the hard limit is 320.')
