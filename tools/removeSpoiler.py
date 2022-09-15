@@ -1,14 +1,15 @@
-from ctypes import Array
 import os
+import tkinter as tk
 from tkinter import filedialog
 
-dirpath = filedialog.askdirectory(initialdir=os.getcwd())
+def start():
+    dirpath = filedialog.askdirectory(initialdir=os.getcwd())
+    
+    if dirpath == '':
+        exit()
 
-if dirpath == '':
-    exit()
+    fileList = os.listdir(dirpath)
 
-
-def bulkrename(fileList: Array):
     renameCount = 0
     deleteCount = 0
     for filename in fileList:
@@ -30,18 +31,8 @@ def bulkrename(fileList: Array):
                 deleteCount += 1
                 os.remove(dirpath + '/' + filename)
                 print("Dealt with a duplicated File. {} was removed.".format(filename))
+
             else:
                 renameCount += 1
                 os.rename(dirpath + '/' + filename, newNamePath)
                 print("Renamed {} to {} | File number: {}".format(filename, newName, renameCount))
-
-    print('\n')
-    return renameCount, deleteCount
-
-
-list_of_files = os.listdir(dirpath)
-Count = bulkrename(list_of_files)
-print('Running again, for checking SPOILERname occurences!\n')
-list_of_files = os.listdir(dirpath)
-NewCount = bulkrename(list_of_files)
-print('Renamed {} Files and Removed {} Files! Exiting...'.format(Count[0] + NewCount[0], Count[1] + NewCount[1]))

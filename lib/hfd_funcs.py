@@ -14,16 +14,16 @@ def getAllPosts(urls, head):
         sleep(0.2)
     return posts
 
-def download(url, id, artist, head, count):
+def download(url, id, artist, head, d):
     file_ext = pathlib.Path(url).suffix
     fileRequest = requests.get(url, headers=head)
 
-    if (os.path.exists(os.getcwd()+f'./download/{artist} - {id}{file_ext}') == True):
+    if (os.path.exists(d + f'/{artist} - {id}{file_ext}') == True):
         print(f'File - {artist} - {id}{file_ext} already exists!')
         return 0
     else: 
         print(f'Downloading {artist} - {id}{file_ext}!')
-        with open(f'./download/{artist} - {id}{file_ext}', 'wb') as f:
+        with open(d + f'/{artist} - {id}{file_ext}', 'wb') as f:
                     f.write(fileRequest.content)
 
 def readFile(file):
