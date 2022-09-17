@@ -8,10 +8,11 @@ from tkinter import filedialog
 from lib import f_funcs as funcs
 
 
-def start(app):
+def start(app, nsfw: bool):
     Window = tk.Toplevel(app)
-    Window.geometry("400x200")
+    Window.geometry("350x125")
     Window.title('Favorite Downloader')
+    Window.resizable(0, 0)
     L1 = tk.Label(Window, text="Input the Username")
     L1.pack()
     nameInput = tk.Entry(master=Window)
@@ -34,7 +35,10 @@ def start(app):
             print('Running again...')
             start()
 
-        url = f'https://e621.net/posts.json?tags=fav:{name}&limit={limit}'
+        if (nsfw):
+            url = f'https://e621.net/posts.json?tags=fav:{name}&limit={limit}'
+        else:
+            url = f'https://e926.net/posts.json?tags=fav:{name}&limit={limit}'
 
         head = {'User-Agent': 'favDownloader/0.1'}
 
@@ -61,9 +65,11 @@ def start(app):
             if (len(artistArray) > 1):
                 for a in artistArray:
                     artistName = artistName + f'{a}, '
-                    artistName = artistName[:-1]
+                artistName = artistName[:-2]
+            elif(len(p['posts'][i]['tags']['artist']) != 0):
+                artistName = p['posts'][i]['tags']['artist'][0]
             else:
-                artistName = artistArray = p['posts'][i]['tags']['artist'][0]
+                artistName = 'unknown'
 
             threading.Thread(target=funcs.download, args=(
                 fileUrl, artistName, postID, head, d)).start()

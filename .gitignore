@@ -2,5 +2,6 @@
 **/build
 **/dist
 **/download
+**/out
 e6Logo.ico
 *.spec
