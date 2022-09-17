@@ -17,7 +17,7 @@ def start(app, nsfw):
     Window.resizable(0, 0)
     L1 = tk.Label(Window, text="Input a url without anything else then the ID")
     L1.pack()
-    L2 = tk.Label(Window, text="Example: https://e621.net/posts/XXXXXXXX")
+    L2 = tk.Label(Window, text="Example: https://e926.net/posts/XXXXXXXX")
     L2.pack()
     L3 = tk.Label(Window, text="Leave blank for getting posts from a file.")
     L3.pack()
