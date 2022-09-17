@@ -13,7 +13,7 @@ from lib import hfd_funcs as funcs
 def start(app, nsfw):
     Window = tk.Toplevel(app)
     Window.geometry('300x200')
-    Window.title('Horny Furry Downloader')
+    Window.title('Mass Post/Post Downloader')
     Window.resizable(0, 0)
     L1 = tk.Label(Window, text="Input a url without anything else then the ID")
     L1.pack()

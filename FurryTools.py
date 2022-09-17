@@ -8,7 +8,7 @@ import tkinter as tk
 
 app = tk.Tk()
 app.geometry("300x200")
-app.title('ETools')
+app.title('FurryTools')
 app.resizable(0, 0)
 
 nsfw = tk.BooleanVar()
