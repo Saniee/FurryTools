@@ -1,4 +1,4 @@
-![Downloads](https://img.shields.io/github/downloads/Saniee/FurryTools/total?style=flat-square)
+![Downloads](https://img.shields.io/github/downloads/Saniee/FurryTools/latest/total?style=flat-square)
 
 FurryTools
 
