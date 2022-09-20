@@ -19,7 +19,7 @@ siteCheckbox.pack()
 fd_button = tk.Button(app, command= lambda: fv.start(app, nsfw.get()), text="Favorite Download")
 fd_button.pack()
 
-hfd_button = tk.Button(app, command= lambda: hfd.start(app, nsfw.get()), text="Mass Post/Post Downloader")
+hfd_button = tk.Button(app, command= lambda: hfd.start(app, nsfw.get()), text="Post Downloader")
 hfd_button.pack()
 
 addSp = tk.Button(app, command= lambda: setSpoiler.start(), text="Add Spoiler tags")

@@ -11,7 +11,6 @@ from lib import f_funcs as funcs
 def start(app, nsfw: bool):
     Window = tk.Toplevel(app)
     Window.geometry("350x125")
-    Window.title('Favorite Downloader')
     Window.resizable(0, 0)
     L1 = tk.Label(Window, text="Input the Username")
     L1.pack()
@@ -27,6 +26,8 @@ def start(app, nsfw: bool):
     runBtn = tk.Button(master=Window, command= lambda: run(nameInput.get(), limitInput.get()), text="Download!")
     runBtn.pack()
     
+    head = {'User-Agent': 'FurryTools/0.6'}
+    
     def run(name, limit):
         d = filedialog.askdirectory(initialdir=os.getcwd())
 
@@ -40,7 +41,7 @@ def start(app, nsfw: bool):
         else:
             url = f'https://e926.net/posts.json?tags=fav:{name}&limit={limit}'
 
-        head = {'User-Agent': 'favDownloader/0.1'}
+        
 
         body = requests.get(url, headers=head)
         p = body.json()
