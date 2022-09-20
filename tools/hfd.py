@@ -8,8 +8,6 @@ import tkinter as tk
 from tkinter import filedialog
 
 from lib import hfd_funcs as funcs
-from tools import search as srch
-
 
 def start(app, nsfw):
     window = tk.Toplevel(app)
@@ -53,13 +51,13 @@ def start(app, nsfw):
     runBtn = tk.Button(window, command= lambda: runUrl(inp.get(), dirLabel["text"]), text="Download!")
     runBtn.pack()
 
+    head = {'User-Agent': 'FurryTools/0.5'}
+
     def runSearch(i, limit, nsfw):
         if (nsfw):
             url = f"https://e621.net/posts.json?tags={i}&limit={limit}"
         else:
             url = f"https://e926.net/posts.json?tags={i}&limit={limit}"
-        
-        head = {'User-Agent': 'FurryTools/0.5'}
 
         posts = requests.get(url, headers=head)
         p = posts.json()
@@ -98,7 +96,6 @@ def start(app, nsfw):
 
     def runUrl(i, d):
         count = 0
-        head = {'User-Agent': 'FurryTools/0.5'}
         if (os.path.exists(os.path.dirname(i))):
             file = open(i, 'r')
             urls = funcs.readFile(file)

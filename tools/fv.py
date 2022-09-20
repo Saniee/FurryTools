@@ -26,6 +26,8 @@ def start(app, nsfw: bool):
     runBtn = tk.Button(master=Window, command= lambda: run(nameInput.get(), limitInput.get()), text="Download!")
     runBtn.pack()
     
+    head = {'User-Agent': 'FurryTools/0.5'}
+    
     def run(name, limit):
         d = filedialog.askdirectory(initialdir=os.getcwd())
 
@@ -39,7 +41,7 @@ def start(app, nsfw: bool):
         else:
             url = f'https://e926.net/posts.json?tags=fav:{name}&limit={limit}'
 
-        head = {'User-Agent': 'FurryTools/0.5'}
+        
 
         body = requests.get(url, headers=head)
         p = body.json()
