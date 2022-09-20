@@ -26,7 +26,7 @@ def start(app, nsfw: bool):
     runBtn = tk.Button(master=Window, command= lambda: run(nameInput.get(), limitInput.get()), text="Download!")
     runBtn.pack()
     
-    head = {'User-Agent': 'FurryTools/0.5'}
+    head = {'User-Agent': 'FurryTools/0.6'}
     
     def run(name, limit):
         d = filedialog.askdirectory(initialdir=os.getcwd())

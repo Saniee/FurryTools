@@ -51,7 +51,7 @@ def start(app, nsfw):
     runBtn = tk.Button(window, command= lambda: runUrl(inp.get(), dirLabel["text"]), text="Download!")
     runBtn.pack()
 
-    head = {'User-Agent': 'FurryTools/0.5'}
+    head = {'User-Agent': 'FurryTools/0.6'}
 
     def runSearch(i, limit, nsfw):
         if (nsfw):
