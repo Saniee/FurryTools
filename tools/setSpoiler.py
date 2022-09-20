@@ -5,6 +5,9 @@ from tkinter import filedialog
 def start():
     dirpath = filedialog.askdirectory(initialdir=os.getcwd())
 
+    if dirpath == '':
+        return
+
     listDir = os.listdir(dirpath)
 
     renameCount = 0

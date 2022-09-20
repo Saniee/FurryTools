@@ -6,7 +6,7 @@ def start():
     dirpath = filedialog.askdirectory(initialdir=os.getcwd())
     
     if dirpath == '':
-        exit()
+        return
 
     fileList = os.listdir(dirpath)
 
