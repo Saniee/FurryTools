@@ -22,7 +22,9 @@ addSp.grid()
 
 remSp = tk.Button(app, command= lambda: removeSpoiler.start(), text="Remove Spoiler tags")
 remSp.grid() """
-
+def disable_event():
+   pass
+   
 # w425 x h350
 mpdFrame = tk.Frame(app, width=250, height=250)
 mpdFrame.grid(row=0, column=0)
@@ -31,8 +33,10 @@ viewWindow = tk.Toplevel(app)
 
 viewWindow.geometry('750x750')
 viewWindow.title('IMG Viewer')
+viewWindow.resizable(0, 0)
 viewWindowImg = tk.Label(viewWindow)
 viewWindowImg.pack(side="bottom", fill="both", expand="yes")
+viewWindow.protocol("WM_DELETE_WINDOW", disable_event)
 
 siteCheckbox = tk.Checkbutton(
     mpdFrame, text="Download NSFW?", variable=nsfwMPD, onvalue=True, offvalue=False)

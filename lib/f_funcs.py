@@ -17,7 +17,7 @@ def download(fileUrl, artistName, postID, head, d, viewWindowImg):
         with open(d + f'/{artistName} - {postID}{file_ext}', 'wb') as f:
             f.write(fileRequest.content)
 
-    if (file_ext == ".jpg" or file_ext == ".png" or file_ext == ".gif"):
+    if (viewWindowImg.winfo_exists() != False and file_ext == ".jpg" or file_ext == ".png" or file_ext == ".gif"):
         img = ImageTk.PhotoImage(Image.open(
             BytesIO(fileRequest.content)).resize((750, 750), Image.ANTIALIAS))
         viewWindowImg.configure(image=img)
