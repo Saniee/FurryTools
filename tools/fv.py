@@ -1,3 +1,4 @@
+import time
 import requests
 import threading
 import os
@@ -7,10 +8,10 @@ from tkinter import filedialog
 
 from lib import f_funcs as funcs
 
-head = {'User-Agent': 'FurryTools/0.6'}
+head = {'User-Agent': 'FurryTools/0.7'}
 
 
-def run(name, limit, nsfw):
+def run(name, limit, nsfw, viewWindowImg):
     d = filedialog.askdirectory(initialdir=os.getcwd())
 
     if (int(limit) > 320):
@@ -51,6 +52,6 @@ def run(name, limit, nsfw):
             artistName = 'unknown'
 
         threading.Thread(target=funcs.download, args=(
-            fileUrl, artistName, postID, head, d)).start()
+            fileUrl, artistName, postID, head, d, viewWindowImg)).start()
 
         i = i + 1
